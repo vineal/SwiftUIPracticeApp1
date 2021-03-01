@@ -39,6 +39,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		344B186025ED6C9C00AD145B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				344B185C25ED194100AD145B /* Band.swift */,
+				344B185925ED0FC500AD145B /* Repository.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		344B186125ED6CB600AD145B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				346CBE6F25ECE84F00396C9B /* PracticeApp1App.swift */,
+				346CBE7125ECE84F00396C9B /* ContentView.swift */,
+				344B185625ECF77800AD145B /* Tab1Content.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		346CBE6325ECE84F00396C9B = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +77,11 @@
 		346CBE6E25ECE84F00396C9B /* PracticeApp1 */ = {
 			isa = PBXGroup;
 			children = (
-				346CBE6F25ECE84F00396C9B /* PracticeApp1App.swift */,
-				346CBE7125ECE84F00396C9B /* ContentView.swift */,
+				344B186125ED6CB600AD145B /* Views */,
+				344B186025ED6C9C00AD145B /* Models */,
 				346CBE7325ECE85300396C9B /* Assets.xcassets */,
 				346CBE7825ECE85300396C9B /* Info.plist */,
 				346CBE7525ECE85300396C9B /* Preview Content */,
-				344B185625ECF77800AD145B /* Tab1Content.swift */,
-				344B185925ED0FC500AD145B /* Repository.swift */,
-				344B185C25ED194100AD145B /* Band.swift */,
 			);
 			path = PracticeApp1;
 			sourceTree = "<group>";
