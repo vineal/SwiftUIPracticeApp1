@@ -15,10 +15,39 @@ struct Tab1Content: View {
             List(bandsRepo.bands) { band in
                 HStack{
                     if let bandImage = band.bandImage{
-                        Image(bandImage)
-                            .resizable()
-                            .frame(width: 50, height: 50, alignment: .center)
-                            .padding()
+                        if let imageHeight = band.imageHeight{
+                            if let imageWidth = band.imageWidth{
+                                Image(bandImage)
+                                    .resizable()
+                                    .frame(
+                                        width: CGFloat(imageHeight),
+                                        height: CGFloat(imageWidth),
+                                        alignment: .center
+                                    )
+                                    .padding()
+                            }else{
+                                Image(bandImage)
+                                    .resizable()
+                                    .frame(
+                                        width: CGFloat(imageHeight),
+                                        height: CGFloat(imageHeight),
+                                        alignment: .center
+                                    )
+                                    .padding()
+                            }
+                        }else{
+                            if let imageWidth = band.imageWidth{
+                                Image(bandImage)
+                                    .resizable()
+                                    .frame(
+                                        width: CGFloat(imageWidth),
+                                        height: CGFloat(imageWidth),
+                                        alignment: .center
+                                    )
+                                    .padding()
+                            }
+                        }
+                        
                     }
                     if let bandText = band.bandText{
                         Text(bandText)

@@ -13,5 +13,5 @@ class BandArray : Decodable {
 
 class Band : Decodable, Identifiable {
     var bandImage, bandText: String?
-    
+    var imageHeight,imageWidth: Float?
 }
