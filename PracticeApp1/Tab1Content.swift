@@ -11,40 +11,21 @@ struct Tab1Content: View {
     @ObservedObject var bandsRepo = Repository()
     var body: some View {
         VStack {
-            //MARK: - Band 1
             List(bandsRepo.bands) { band in
                 HStack{
                     if let bandImage = band.bandImage{
                         if let imageHeight = band.imageHeight{
                             if let imageWidth = band.imageWidth{
-                                Image(bandImage)
-                                    .resizable()
-                                    .frame(
-                                        width: CGFloat(imageHeight),
-                                        height: CGFloat(imageWidth),
-                                        alignment: .center
-                                    )
-                                    .padding()
+                                DrawImageView(bandImage :bandImage ,imageWidth : imageHeight,imageHeight : imageWidth)
                             }else{
-                                Image(bandImage)
-                                    .resizable()
-                                    .frame(
-                                        width: CGFloat(imageHeight),
-                                        height: CGFloat(imageHeight),
-                                        alignment: .center
-                                    )
-                                    .padding()
+                                DrawImageView(bandImage :bandImage ,imageWidth : imageHeight,imageHeight : imageHeight)
                             }
                         }else{
                             if let imageWidth = band.imageWidth{
-                                Image(bandImage)
-                                    .resizable()
-                                    .frame(
-                                        width: CGFloat(imageWidth),
-                                        height: CGFloat(imageWidth),
-                                        alignment: .center
-                                    )
-                                    .padding()
+                                DrawImageView(bandImage :bandImage ,imageWidth : imageWidth,imageHeight : imageWidth)
+                            }
+                            else{
+                                DrawImageView(bandImage :bandImage ,imageWidth : 50.0, imageHeight : 50.0)
                             }
                         }
                         
@@ -56,7 +37,7 @@ struct Tab1Content: View {
                 }
                 .frame(minWidth: 0,
                        maxWidth: .infinity)
-                .background(Color.gray.opacity(0.2))
+                .background(Color.gray.opacity(0.1))
                 .cornerRadius(10)
                 .padding()
                 Spacer()
@@ -65,6 +46,27 @@ struct Tab1Content: View {
         .onAppear(){
             self.bandsRepo.getBands()
         }
+    }
+}
+
+struct DrawImageView: View {
+    let bandImage : String
+    let imageWidth : Float
+    let imageHeight : Float
+    init(bandImage : String,imageWidth : Float,imageHeight : Float){
+        self.bandImage = bandImage
+        self.imageWidth = imageWidth
+        self.imageHeight = imageHeight
+    }
+    var body: some View {
+        Image(bandImage)
+            .resizable()
+            .frame(
+                width: CGFloat(imageWidth),
+                height: CGFloat(imageHeight),
+                alignment: .center
+            )
+            .padding()
     }
 }
 
