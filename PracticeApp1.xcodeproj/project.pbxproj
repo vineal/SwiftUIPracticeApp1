@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34227B1D25F1F5E90054AFA6 /* DrawImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227B1C25F1F5E90054AFA6 /* DrawImageView.swift */; };
+		34227B2025F1F6250054AFA6 /* DrawTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227B1F25F1F6250054AFA6 /* DrawTextView.swift */; };
+		343A19BF25F0CB90004E111E /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343A19BE25F0CB90004E111E /* RemoteImage.swift */; };
 		344B185725ECF77800AD145B /* Tab1Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B185625ECF77800AD145B /* Tab1Content.swift */; };
 		344B185A25ED0FC500AD145B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B185925ED0FC500AD145B /* Repository.swift */; };
 		344B185D25ED194100AD145B /* Band.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B185C25ED194100AD145B /* Band.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34227B1C25F1F5E90054AFA6 /* DrawImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawImageView.swift; sourceTree = "<group>"; };
+		34227B1F25F1F6250054AFA6 /* DrawTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTextView.swift; sourceTree = "<group>"; };
+		343A19BE25F0CB90004E111E /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		344B185625ECF77800AD145B /* Tab1Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1Content.swift; sourceTree = "<group>"; };
 		344B185925ED0FC500AD145B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		344B185C25ED194100AD145B /* Band.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Band.swift; sourceTree = "<group>"; };
@@ -48,6 +54,7 @@
 			children = (
 				344B185C25ED194100AD145B /* Band.swift */,
 				344B185925ED0FC500AD145B /* Repository.swift */,
+				343A19BE25F0CB90004E111E /* RemoteImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -60,6 +67,8 @@
 				344B185625ECF77800AD145B /* Tab1Content.swift */,
 				348375B125EE4B4900FC8309 /* DetailScreen.swift */,
 				348375B425EE773300FC8309 /* BandView.swift */,
+				34227B1C25F1F5E90054AFA6 /* DrawImageView.swift */,
+				34227B1F25F1F6250054AFA6 /* DrawTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,8 +179,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				344B185725ECF77800AD145B /* Tab1Content.swift in Sources */,
+				34227B1D25F1F5E90054AFA6 /* DrawImageView.swift in Sources */,
 				346CBE7225ECE84F00396C9B /* ContentView.swift in Sources */,
 				348375B225EE4B4900FC8309 /* DetailScreen.swift in Sources */,
+				343A19BF25F0CB90004E111E /* RemoteImage.swift in Sources */,
+				34227B2025F1F6250054AFA6 /* DrawTextView.swift in Sources */,
 				344B185D25ED194100AD145B /* Band.swift in Sources */,
 				346CBE7025ECE84F00396C9B /* PracticeApp1App.swift in Sources */,
 				348375B525EE773300FC8309 /* BandView.swift in Sources */,
