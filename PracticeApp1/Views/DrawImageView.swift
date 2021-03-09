@@ -22,36 +22,28 @@ struct DrawImageView: View {
         ScrollView(.horizontal){
             HStack(spacing: 10){
                 let arrCount = bandImageArr.count
-                ForEach(0..<arrCount){index in
-                    if imageHeight == nil {
-                        if imageWidth != nil{
+                if(arrCount>1){
+                    ForEach(0..<arrCount){index in
+                        if imageHeight == nil || imageWidth == nil {
+                            
                             RemoteImage(url: bandImageArr[index])
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: CGFloat(imageWidth!))
                         }
                         else{
                             RemoteImage(url: bandImageArr[index])
-                                .aspectRatio(contentMode: .fit)
-                                .frame(minWidth: 0, maxWidth: UIScreen.main.bounds.width - 70,
-                                       minHeight: 0, maxHeight: UIScreen.main.bounds.height/2)
-                        }
-                    }else{
-                        if imageWidth == nil{
-                            RemoteImage(url: bandImageArr[index])
-                                .aspectRatio(contentMode: .fit)
-                                .frame(minWidth: 0,
-                                       maxWidth: UIScreen.main.bounds.width - 70,
-                                       maxHeight:CGFloat(imageHeight!))
-                        }
-                        else{
-                            RemoteImage(url: bandImageArr[index])
-                                .aspectRatio(contentMode: .fit)
                                 .frame(width:CGFloat(imageWidth!),height: CGFloat(imageHeight!))
                         }
-                        
                     }
                 }
-                
+                else{
+                    if imageHeight == nil || imageWidth == nil {
+                        
+                        RemoteImage(url: bandImageArr[0])
+                    }
+                    else{
+                        RemoteImage(url: bandImageArr[0])
+                            .frame(width:CGFloat(imageWidth!),height: CGFloat(imageHeight!))
+                    }
+                }
             }
         }
     }

@@ -13,8 +13,16 @@ struct Tab1Content: View {
     var body: some View {
         VStack {
             NavigationView{
-                List(bandsRepo.bands) { band in
-                    BandView(band: band)
+                List{
+                    ForEach(bandsRepo.bands) { band in
+                        BandView(band: band)
+                    }
+                    if bandsRepo.membersListFull == false {
+                        ProgressView()
+                            .onAppear {
+                                bandsRepo.getPagedBands()
+                            }
+                    }
                 }
             }
         }

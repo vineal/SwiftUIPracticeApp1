@@ -37,21 +37,32 @@ struct RemoteImage: View {
     }
 
     @StateObject private var loader: Loader
-    var loading: Image
-    var failure: Image
+    var loading: UIImage
+    var failure: UIImage
 
     var body: some View {
-        selectImage()
+        let image = selectImage()
+        let calcHeight = calcImageHeight(image: image)
+        Image(uiImage: image)
             .resizable()
+            .frame(width: UIScreen.main.bounds.width-30, height: calcHeight)
+            .aspectRatio(contentMode: .fit)
+            
     }
 
-    init(url: String, loading: Image = Image(systemName: "photo"), failure: Image = Image(systemName: "multiply.circle")) {
+    private func calcImageHeight(image : UIImage) -> CGFloat{
+        let ascpectRatio = image.size.width/image.size.height
+        let imageHeight = (UIScreen.main.bounds.width-30)/ascpectRatio
+        return imageHeight
+    }
+    
+    init(url: String, loading: UIImage = UIImage(systemName: "photo")!, failure: UIImage = UIImage(systemName: "multiply.circle")!) {
         _loader = StateObject(wrappedValue: Loader(url: url))
         self.loading = loading
         self.failure = failure
     }
 
-    private func selectImage() -> Image {
+    private func selectImage() -> UIImage {
         switch loader.state {
         case .loading:
             return loading
@@ -59,7 +70,7 @@ struct RemoteImage: View {
             return failure
         default:
             if let image = UIImage(data: loader.data) {
-                return Image(uiImage: image)
+                return image
             } else {
                 return failure
             }

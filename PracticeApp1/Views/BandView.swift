@@ -14,8 +14,6 @@ struct BandView: View {
         self.band = band
     }
     
-   
-    
     var body: some View {
         VStack{
             if let bandImageArr = band.bandImage{
